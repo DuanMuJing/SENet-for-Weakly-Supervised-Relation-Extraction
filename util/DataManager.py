@@ -89,7 +89,9 @@ class DataManager:
                          entity2,
                          relation,
                          data[5:-1])
-            if data[0]+"\t"+data[1] not in self.bags_test:
+            # every entity pairs only get one sentence???i think you should modified as follows:
+#             if data[0]+"\t"+data[1] not in self.bags_test:
+            if data[2]+"\t"+data[3] not in self.bags_test:
                 self.bags_test[entity1+" "+entity2] = [s]
             else:
                 self.bags_test[entity1+" "+entity2].append(s)
